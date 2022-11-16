@@ -23,6 +23,9 @@ The framework can be used along INotifyDataErrorInfo, but is not strictly necess
 		<PackageProjectUrl>https://github.com/Matt90hz/WPF-Validation-Framework</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageTags>validation,wpf</PackageTags>
+		<AssemblyVersion></AssemblyVersion>
+		<FileVersion></FileVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
