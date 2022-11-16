@@ -1,0 +1,197 @@
+﻿<Window x:Class="Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Example.ViewModels"
+        xmlns:local="clr-namespace:Example"
+        mc:Ignorable="d"
+        Title="Book Store" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance vm:ViewModelShelf}">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <!--Main container-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!--Title-->
+        <TextBlock Text="Book Store" 
+                   FontSize="24"
+                   HorizontalAlignment="Center"/>
+        
+        <!--Column 1 Books, 2 Details-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <!--List and buttons container-->
+            <!--Row 1 Title, 2 List, 3 Edit Buttons -->
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <!--Title-->
+                <TextBlock
+                    Text="Books"
+                    FontSize="18"
+                    HorizontalAlignment="Center"/>
+                
+                <!--List-->
+                <ListBox
+                    Grid.Row="1"
+                    ItemsSource="{Binding Books}"
+                    SelectedItem="{Binding CurrentBook}"
+                    HorizontalContentAlignment="Stretch"
+                    Validation.ErrorTemplate="{x:Null}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:ViewModelBook}">
+                            <UniformGrid Columns="2" Margin="5">
+                                <TextBlock Text="{Binding Title, ValidatesOnNotifyDataErrors=False}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Author, ValidatesOnNotifyDataErrors=False}" FontWeight="Bold"/>
+                            </UniformGrid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                
+                <!--Container for buttons-->
+                <StackPanel Margin="0 5 0 0" Orientation="Horizontal" Grid.Row="2">
+                    <Button
+                        Width="70"
+                        Height="30"
+                        Content="New"
+                        Command="{x:Static ApplicationCommands.New}"/>
+                    <Button
+                        Margin="5 0"
+                        Width="70"
+                        Height="30"
+                        Content="Delete"
+                        Command="{x:Static ApplicationCommands.Delete}"/>
+                </StackPanel>
+            </Grid>
+            
+            <!--Details Container-->
+            <ScrollViewer 
+                Grid.Column ="1"
+                Margin="10"
+                Visibility="{Binding IsSelected, Converter={StaticResource BooleanToVisibility}}"
+                VerticalScrollBarVisibility="Auto">
+                <!--Row 1 Title, 2 Details-->
+                <Grid Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--Title-->
+                    <TextBlock
+                        Text="Details"
+                        FontSize="18"
+                        HorizontalAlignment="Center"/>
+                    
+                    <!--Details-->
+                    <ContentControl Grid.Row="1" Content="{Binding CurrentBook}" Validation.ErrorTemplate="{x:Null}">
+                        <ContentControl.ContentTemplate>
+                            <!--ViewModel book template-->
+                            <DataTemplate DataType="{x:Type vm:ViewModelBook}">
+                                <StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="ISBN"/>
+                                        <TextBox Text="{Binding ISBN, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <!--Ok for example, should use ErrorTemplate-->
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding ISBN}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="Title"/>
+                                        <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding Title}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="Author"/>
+                                        <TextBox Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding Author}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="Pages"/>
+                                        <TextBox Text="{Binding Pages, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding Pages}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="Written"/>
+                                        <DatePicker Text="{Binding Written, Mode=TwoWay}"/>
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding Written}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="Published"/>
+                                        <DatePicker Text="{Binding Published, Mode=TwoWay}"/>
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding Published}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                    <StackPanel Margin="0 5">
+                                        <TextBlock Text="Publisher email"/>
+                                        <TextBox Text="{Binding PublisherEmail, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock 
+                                            Text="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                                            Validation.ValidationAdornerSiteFor="{Binding PublisherEmail}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Visibility="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.HasError) ,Converter={StaticResource BooleanToVisibility}}"
+                                            FontSize="10"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ContentControl.ContentTemplate>
+                    </ContentControl>
+                </Grid>
+            </ScrollViewer>
+
+        </Grid>
+
+    </Grid>
+</Window>
