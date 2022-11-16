@@ -1,12 +1,9 @@
 ﻿using Descriptions.Interfaces;
-using Descriptions.Extensions;
 using Rules.Base;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Windows.Controls;
 
 namespace Descriptions
 {
@@ -26,7 +23,7 @@ namespace Descriptions
         public IValidationDescriptions<T> AddRule(ExtendedValidationRule rule)
         {
             if (_currentProp is null) throw new InvalidOperationException("Must use RulesFor before adding a rule!");
-            
+
 
             if (!_extendedValidationRules.ContainsKey(_currentProp))
             {
@@ -42,7 +39,7 @@ namespace Descriptions
         public IValidationDescriptions<T> RulesFor(Expression<Func<T, object?>> expression)
         {
             _currentProp = GetPropertyName(expression);
-            return this;         
+            return this;
         }
 
         /// <inheritdoc/>

@@ -1,10 +1,4 @@
 ﻿using Rules.Base;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Rules
@@ -22,7 +16,7 @@ namespace Rules
         /// <summary>
         /// Maximum number of MB that the validated value can have.
         /// </summary>
-        public int Limit { get => (int)(_limit/1e+6); set => _limit = (long)(value * 1e+6); }
+        public int Limit { get => (int)(_limit / 1e+6); set => _limit = (long)(value * 1e+6); }
 
         /// <summary>
         /// Create a new instance of <see cref="MBLimitRule"/> and initialize <see cref="Limit"/> to 50 MB.

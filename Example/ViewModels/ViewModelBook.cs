@@ -2,8 +2,6 @@
 using Example.Services;
 using Example.ViewModels.Base;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Example.ViewModels
@@ -20,7 +18,7 @@ namespace Example.ViewModels
         private string _pages = "100";
         private DateTime _written = DateTime.Today;
         private DateTime _published = DateTime.Today.AddDays(100);
-        private string _publisherEmail = string.Empty;  
+        private string _publisherEmail = string.Empty;
 
         public string ISBN
         {

@@ -2,7 +2,6 @@
 using Rules;
 using Rules.Base;
 using System;
-using System.Windows.Controls;
 
 namespace Descriptions.Extensions
 {
@@ -31,8 +30,8 @@ namespace Descriptions.Extensions
         /// <typeparam name="U"></typeparam>
         /// <param name="validationDescriptions"></param>
         /// <returns><see cref="IValidationDescriptions{T}"/> to chain rules registration.</returns>
-        public static IValidationDescriptions<T> AddRule<T,U>(this IValidationDescriptions<T> validationDescriptions) 
-            where T : class 
+        public static IValidationDescriptions<T> AddRule<T, U>(this IValidationDescriptions<T> validationDescriptions)
+            where T : class
             where U : ExtendedValidationRule, new()
         {
             validationDescriptions.AddRule(new U());

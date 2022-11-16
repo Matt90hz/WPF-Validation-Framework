@@ -17,7 +17,7 @@ namespace Example.ValidationDescriptions
             RulesFor(b => b.Title).NotBlank().MaxStringLenght(50);
 
             //Register rules using AddRules extension
-            RulesFor(b=> b.Author).AddRules(d =>
+            RulesFor(b => b.Author).AddRules(d =>
             {
                 d.NotBlank();
                 d.MaxStringLenght(50);

@@ -1,10 +1,5 @@
 ﻿using Rules.Base;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Rules
@@ -44,7 +39,7 @@ namespace Rules
 
         /// <inheritdoc/>
         public override ValidationResult Validate(object value, object sender) =>
-            value is DateTime date && date > After ? 
+            value is DateTime date && date > After ?
             ValidationResult.ValidResult : new ValidationResult(false, "Date before the limit!");
     }
 
@@ -74,10 +69,10 @@ namespace Rules
         public override ValidationResult Validate(object value, object sender)
         {
             return value is DateTime date && date > Property.Invoke((T)sender) ?
-                ValidationResult.ValidResult : 
+                ValidationResult.ValidResult :
                 new(false, "Date before the limit!");
         }
-            
+
     }
 
 }

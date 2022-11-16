@@ -1,13 +1,7 @@
 ﻿using Rules.Base;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace Rules 
+namespace Rules
 {
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that evalute if a <see cref="string"/> can be parsed to an <see cref="int"/>.

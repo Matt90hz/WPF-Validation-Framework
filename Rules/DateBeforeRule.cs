@@ -1,6 +1,5 @@
 ﻿using Rules.Base;
 using System;
-using System.Globalization;
 using System.Windows.Controls;
 
 namespace Rules

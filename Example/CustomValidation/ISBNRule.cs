@@ -1,10 +1,5 @@
 ﻿using Rules.Base;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Example.CustomValidation
@@ -34,21 +29,21 @@ namespace Example.CustomValidation
         /// <returns></returns>
         public static bool IsISBN(string isbn)
         {
-            if(isbn.Where(c => char.IsNumber(c)).Count() != 10) return false;
+            if (isbn.Where(c => char.IsNumber(c)).Count() != 10) return false;
 
             //Display of query skills.
             var numbers = (from c in isbn
-                          where char.IsNumber(c)
-                          select int.Parse(c.ToString())).ToArray();
+                           where char.IsNumber(c)
+                           select int.Parse(c.ToString())).ToArray();
 
             int chekNumber = 0;
 
-            for(var i = 10; i > 0; i--)
+            for (var i = 10; i > 0; i--)
             {
-                chekNumber = (i * numbers[i - 1]) + chekNumber; 
+                chekNumber = (i * numbers[i - 1]) + chekNumber;
             }
 
-           return chekNumber % 11 == 0;
+            return chekNumber % 11 == 0;
         }
     }
 }

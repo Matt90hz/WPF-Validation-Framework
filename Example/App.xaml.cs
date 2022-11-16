@@ -1,14 +1,5 @@
-﻿using Descriptions.Interfaces;
-using Example.Models;
-using Example.ValidationDescriptions;
+﻿using Example.ValidationDescriptions;
 using Microsoft.Extensions.DependencyInjection;
-using Rules.Base;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using Validation;
 using Validation.Extensions;

@@ -1,10 +1,4 @@
 ﻿using Rules.Base;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 
 namespace Rules
@@ -29,9 +23,9 @@ namespace Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender) => 
+        public override ValidationResult Validate(object value, object sender) =>
             value is string s && s.Length >= MinStingLenght ?
             ValidationResult.ValidResult : new(false, "Too short!");
-        
+
     }
 }

@@ -1,12 +1,8 @@
-﻿using Example.Models;
-using Example.Services;
+﻿using Example.Services;
 using Example.ViewModels.Base;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Example.ViewModels
@@ -73,7 +69,7 @@ namespace Example.ViewModels
             _books.Add(book);
             CurrentBook = book;
         }
-       
+
         /// <summary>
         /// Remove the <see cref="CurrentBook"/> from <see cref="Books"/>.
         /// </summary>
