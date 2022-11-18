@@ -4,9 +4,9 @@
 		<TargetFramework>net5.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<Nullable>enable</Nullable>
-		<PackageId>Incatechnonologies.WPF.ValidationFramework</PackageId>
-		<Title>Incatechnologies WPF Validation Framework</Title>
-		<Authors>Incatechnologies</Authors>
+		<PackageId>IncaTechnologies.WPF.ValidationFramework</PackageId>
+		<Title>IncaTechnologies WPF Validation Framework</Title>
+		<Authors>IncaTechnologies</Authors>
 		<Company></Company>
 		<Product>WPF Validation Framework</Product>
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
