@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Rules.Base.ExtendedValidationRule" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Descriptions.ValidationDescriptions&lt;T&gt;">
+    <Position X="3.75" Y="2.75" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Validation.ValidationService">
+    <Position X="0.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAAAACAAABAA=</HashCode>
+      <FileName>ValidationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Validation.Interfaces.IValidationService" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Interfaces\IValidationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Descriptions.Interfaces.IValidationDescriptions" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Descriptions.Interfaces.IValidationDescriptions&lt;T&gt;" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
