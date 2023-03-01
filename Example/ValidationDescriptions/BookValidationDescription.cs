@@ -1,5 +1,5 @@
-﻿using Descriptions;
-using Descriptions.Extensions;
+﻿using Validation.Descriptions;
+using Validation.Descriptions.Extensions;
 using Example.CustomValidation;
 using Example.ViewModels;
 

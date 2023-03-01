@@ -1,8 +1,8 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System.Linq;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implementaion of <see cref="NoSymbolsRule"/> that checks if a <see cref="string"/> contains any symbol.

@@ -1,7 +1,7 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implementaion of <see cref="ExtendedValidationRule"/> that checks if a <see cref="string"/> can be parsed into a <see cref="int"/>.

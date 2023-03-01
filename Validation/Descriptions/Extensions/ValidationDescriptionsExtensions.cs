@@ -1,9 +1,9 @@
-﻿using Descriptions.Interfaces;
-using Rules;
-using Rules.Base;
+﻿using Validation.Descriptions.Interfaces;
+using Validation.Rules;
+using Validation.Rules.Base;
 using System;
 
-namespace Descriptions.Extensions
+namespace Validation.Descriptions.Extensions
 {
     /// <summary>
     /// Extension methods for <see cref="IValidationDescriptions{T}"/>.

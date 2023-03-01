@@ -1,8 +1,8 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// <see cref="ExceptionValidationRule"/> implamentation that checks if a <see cref="DateTime"/> property come after <see cref="After"/>.

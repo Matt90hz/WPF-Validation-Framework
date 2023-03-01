@@ -1,9 +1,9 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Descriptions.Interfaces
+namespace Validation.Descriptions.Interfaces
 {
     /// <summary>
     /// Non generic part of <see cref="IValidationDescriptions{T}"/>

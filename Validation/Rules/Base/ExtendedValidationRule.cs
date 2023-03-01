@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Controls;
 
-namespace Rules.Base
+namespace Validation.Rules.Base
 {
     /// <summary>
     /// Base class that extends <see cref="ValidationRule"/> with <see cref="Validate(object, object)"/> function.

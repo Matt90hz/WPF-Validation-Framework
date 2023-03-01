@@ -1,11 +1,11 @@
-﻿using Descriptions.Interfaces;
-using Rules.Base;
+﻿using Validation.Descriptions.Interfaces;
+using Validation.Rules.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Descriptions
+namespace Validation.Descriptions
 {
     /// <summary>
     /// Default implementation of <see cref="IValidationDescriptions{T}"/>.

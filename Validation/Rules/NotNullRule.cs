@@ -1,7 +1,7 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that checks if a property value is <c>null</c>.

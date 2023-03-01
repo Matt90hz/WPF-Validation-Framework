@@ -1,8 +1,8 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that evaluate if a property is equal to <see cref="Value"/>.

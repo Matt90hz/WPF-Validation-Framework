@@ -1,8 +1,8 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implemantation of <see cref="ExtendedValidationRule"/> that checks if two properties on the same object

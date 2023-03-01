@@ -1,4 +1,4 @@
-﻿using Descriptions.Interfaces;
+﻿using Validation.Descriptions.Interfaces;
 using System;
 using Validation.Interfaces;
 

@@ -1,9 +1,9 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System;
 using System.Net.Mail;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that evaluate if a <see cref="string"/> is an email format.

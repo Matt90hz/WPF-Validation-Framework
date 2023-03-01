@@ -1,7 +1,7 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System.Windows.Controls;
 
-namespace Rules
+namespace Validation.Rules
 {
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that check if a <see cref="byte[]"/> is within the <see cref="Limit"/> in MB.

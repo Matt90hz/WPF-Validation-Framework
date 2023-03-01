@@ -1,4 +1,4 @@
-﻿using Descriptions.Interfaces;
+﻿using Validation.Descriptions.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using Validation.Interfaces;

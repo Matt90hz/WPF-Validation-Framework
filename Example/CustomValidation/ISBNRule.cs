@@ -1,4 +1,4 @@
-﻿using Rules.Base;
+﻿using Validation.Rules.Base;
 using System.Linq;
 using System.Windows.Controls;
 
