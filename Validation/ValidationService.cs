@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 using Validation.Interfaces;
+using Validation.Rules.Base;
 
 namespace Validation
 {
@@ -14,9 +15,9 @@ namespace Validation
         private readonly ICollection<IValidationDescriptions> _validationDescriptions = new List<IValidationDescriptions>();
 
         /// <inheritdoc/>
-        public IValidationService AddValidationDescription<T>(IValidationDescriptions<T> validationDescriptions) where T : class
+        public IValidationService AddValidationDescription<T>(IValidationDescriptions<T> validationDescription) where T : class
         {
-            _validationDescriptions.Add(validationDescriptions);
+            _validationDescriptions.Add(validationDescription);
             return this;
         }
 
@@ -25,8 +26,18 @@ namespace Validation
         {
             if (GetTargetValue(target, propName) is not object targetValue) return Enumerable.Empty<ValidationResult>();
 
-            return _validationDescriptions.FirstOrDefault(vd => typeof(IValidationDescriptions<>).MakeGenericType(target.GetType()).IsInstanceOfType(vd))?
-                .GetRules(propName)?.Select(r => r.Validate(targetValue, target)) ?? Enumerable.Empty<ValidationResult>();
+            var validationDescriptions = _validationDescriptions.Where(vd => vd is IValidationDescriptions<T>);
+            
+            var result = new List<ValidationResult>();
+
+            foreach (var validationDescription in validationDescriptions)
+            {
+                if (validationDescription.GetRules(propName) is not IEnumerable<ExtendedValidationRule> rules) continue;
+
+                result.AddRange(rules.Select(r => r.Validate(targetValue, target)));
+            }
+
+            return result;
         }
 
         /// <summary>
