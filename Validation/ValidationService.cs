@@ -4,6 +4,8 @@ using System.Linq;
 using System.Windows.Controls;
 using Validation.Interfaces;
 using Validation.Rules.Base;
+using System;
+using Validation.Descriptions.Extensions;
 
 namespace Validation
 {
@@ -26,18 +28,10 @@ namespace Validation
         {
             if (GetTargetValue(target, propName) is not object targetValue) return Enumerable.Empty<ValidationResult>();
 
-            var validationDescriptions = _validationDescriptions.Where(vd => vd is IValidationDescriptions<T>);
-            
-            var result = new List<ValidationResult>();
-
-            foreach (var validationDescription in validationDescriptions)
-            {
-                if (validationDescription.GetRules(propName) is not IEnumerable<ExtendedValidationRule> rules) continue;
-
-                result.AddRange(rules.Select(r => r.Validate(targetValue, target)));
-            }
-
-            return result;
+            var validationDescriptionType = typeof(IValidationDescriptions<>).MakeGenericType(target.GetType());
+            var validationDescriptions = _validationDescriptions.Where(vd => vd.GetType().IsAssignableTo(validationDescriptionType));
+            var rules = validationDescriptions.SelectMany(vd => vd.GetRules(propName) ?? Enumerable.Empty<ExtendedValidationRule>());
+            return rules.Select(r => r.Validate(targetValue, target));
         }
 
         /// <summary>

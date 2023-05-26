@@ -2,6 +2,7 @@
 using Validation.Rules;
 using Validation.Rules.Base;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Validation.Descriptions.Extensions
 {
@@ -37,7 +38,6 @@ namespace Validation.Descriptions.Extensions
             validationDescriptions.AddRule(new U());
             return validationDescriptions;
         }
-
 
         /// <summary>
         /// Add <see cref="Rules.DateAfterRule"/> to <see cref="IValidationDescriptions{T}"/>.
@@ -266,5 +266,6 @@ namespace Validation.Descriptions.Extensions
             validationDescriptions.AddRule(new StringLimitRule(lenght));
             return validationDescriptions;
         }
+
     }
 }

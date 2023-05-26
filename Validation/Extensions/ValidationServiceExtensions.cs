@@ -40,5 +40,33 @@ namespace Validation.Extensions
 
             return validationService;
         }
+
+        /// <summary>
+        /// Add a <see cref="IValidationDescriptions{T}"/> to the <see cref="IValidationService"/>.
+        /// </summary>
+        /// <param name="validationService"></param>
+        /// <param name="type">The type of the <see cref="IValidationDescriptions{T}"/> to add.</param>
+        /// <returns>
+        /// <see cref="IValidationService"/> to chain the construction.
+        /// </returns>
+        /// <exception cref="Exception">
+        /// Throws an exception if the the <paramref name="type"/> is not an implementation of <see cref="IValidationDescriptions{T}"/> or do not have a parameterless constructor.
+        /// </exception>
+        /// <remarks>
+        /// The <paramref name="type"/> must implement <see cref="IValidationDescriptions{T}"/> and have a parameterless constructor.
+        /// </remarks>
+        public static IValidationService AddValidationDescription(this IValidationService validationService, Type type)
+        {
+            try
+            {
+                validationService.AddValidationDescription((dynamic)Activator.CreateInstance(type)!);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Watch out the type parameter must implement {nameof(IValidationDescriptions)}<> generic type.", ex);
+            }
+
+            return validationService;
+        }
     }
 }
