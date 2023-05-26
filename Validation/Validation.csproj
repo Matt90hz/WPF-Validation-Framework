@@ -10,7 +10,7 @@
 		<Company></Company>
 		<Product>WPF Validation Framework</Product>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Version>1.1.1</Version>
+		<Version>1.2.0</Version>
 		<Description>Simple validation framework design to decoupple validation logic form the validated object.
 Uses validation descriptions instead of attributes or any code inside the model.
 The framework can be used along INotifyDataErrorInfo, but is not strictly necessary.</Description>
@@ -20,6 +20,7 @@ The framework can be used along INotifyDataErrorInfo, but is not strictly necess
 		<PackageReleaseNotes>1.0.0 - Frist release
 1.1.0 - Fixed critical problem with project reference
 1.1.1 - Added documentation
+1.2.0 - Implemented automatic DI registration
 		</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/Matt90hz/WPF-Validation-Framework.git</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
