@@ -7,7 +7,7 @@ namespace Validation.Rules
     /// <summary>
     /// Implementaion of <see cref="NoSymbolsRule"/> that checks if a <see cref="string"/> contains any symbol.
     /// </summary>
-    public class NoSymbolsRule : ExtendedValidationRule
+    public sealed class NoSymbolsRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
         public override ValidationResult Validate(object value, object sender)

@@ -6,7 +6,7 @@ namespace Validation.Rules
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that validate if a <see cref="string"/> is longer than <see cref="MinStingLenght"/>
     /// </summary>
-    public class MinStingLenghtRule : ExtendedValidationRule
+    public sealed class MinStingLenghtRule : ExtendedValidationRule
     {
         /// <summary>
         /// Value used by <see cref="Validate(object, object)"/> to calculate <see cref="ValidationResult"/>.

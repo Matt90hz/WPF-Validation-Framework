@@ -7,7 +7,7 @@ namespace Validation.Rules
     /// <summary>
     /// <see cref="ExceptionValidationRule"/> implamentation that checks if a <see cref="DateTime"/> property come after <see cref="After"/>.
     /// </summary>
-    public class DateAfterRule : ExtendedValidationRule
+    public sealed class DateAfterRule : ExtendedValidationRule
     {
         private readonly DateTime? _after;
         private readonly Func<DateTime>? _afterFunc;
@@ -48,7 +48,7 @@ namespace Validation.Rules
     /// property of the same object.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DateAfterRule<T> : ExtendedValidationRule where T : class
+    public sealed class DateAfterRule<T> : ExtendedValidationRule where T : class
     {
         /// <summary>
         /// A function that rappresent the <see cref="DateTime"/> property that is used by <see cref="Validate(object, object)"/> to evaluate

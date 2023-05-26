@@ -6,7 +6,7 @@ namespace Validation.Rules
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that checks if a <see cref="string"/> is <c>null</c> or empty.
     /// </summary>
-    public class NoBlankRule : ExtendedValidationRule
+    public sealed class NoBlankRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
         public override ValidationResult Validate(object value, object sender)

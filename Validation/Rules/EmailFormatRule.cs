@@ -8,8 +8,9 @@ namespace Validation.Rules
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that evaluate if a <see cref="string"/> is an email format.
     /// </summary>
-    public class EmailFormatRule : ExtendedValidationRule
+    public sealed class EmailFormatRule : ExtendedValidationRule
     {
+        /// <inheritdoc/>
         public override ValidationResult Validate(object value, object sender)
         {
             try

@@ -7,7 +7,7 @@ namespace Validation.Rules
     /// <summary>
     /// Implementation of <see cref="ExtendedValidationRule"/> that evaluate if a property is equal to <see cref="Value"/>.
     /// </summary>
-    public class EqualToRule : ExtendedValidationRule
+    public sealed class EqualToRule : ExtendedValidationRule
     {
         private readonly object? _value;
         private readonly Func<object>? _funcValue;

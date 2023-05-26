@@ -7,7 +7,7 @@ namespace Validation.Rules
     /// Implementation of <see cref="ExtendedValidationRule"/> that checks if
     /// a <see cref="string"/> property has less characters than <see cref="Limit"/>.
     /// </summary>
-    public class StringLimitRule : ExtendedValidationRule
+    public sealed class StringLimitRule : ExtendedValidationRule
     {
         /// <summary>
         /// Value used by <see cref="Validate(object, object)"/> to assess <see cref="ValidationResult"/>.

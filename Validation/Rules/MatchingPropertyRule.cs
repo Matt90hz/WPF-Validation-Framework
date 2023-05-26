@@ -9,7 +9,7 @@ namespace Validation.Rules
     /// of type <typeparamref name="T"/> has the same values.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class MatchingPropertyRule<T> : ExtendedValidationRule where T : class
+    public sealed class MatchingPropertyRule<T> : ExtendedValidationRule where T : class
     {
         /// <summary>
         /// Function that reppresent the property that has to be matched.

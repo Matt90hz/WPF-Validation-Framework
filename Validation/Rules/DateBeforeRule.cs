@@ -7,7 +7,7 @@ namespace Validation.Rules
     /// <summary>
     /// <see cref="ExceptionValidationRule"/> implamentation that checks if a <see cref="DateTime"/> property come before <see cref="Before"/>.
     /// </summary>
-    public class DateBeforeRule : ExtendedValidationRule
+    public sealed class DateBeforeRule : ExtendedValidationRule
     {
         private readonly Func<DateTime>? _beforeFunc;
         private readonly DateTime? _before;
@@ -49,7 +49,7 @@ namespace Validation.Rules
     /// property of the same object.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DateBeforeRule<T> : ExtendedValidationRule where T : class
+    public sealed class DateBeforeRule<T> : ExtendedValidationRule where T : class
     {
         /// <summary>
         /// A function that rappresent the <see cref="DateTime"/> property that is used by <see cref="Validate(object, object)"/> to evaluate

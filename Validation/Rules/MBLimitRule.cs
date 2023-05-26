@@ -9,7 +9,7 @@ namespace Validation.Rules
     /// <remarks>
     /// This rule has been created to validate an image converted to byte array that had to be saved on a database.
     /// </remarks>
-    public class MBLimitRule : ExtendedValidationRule
+    public sealed class MBLimitRule : ExtendedValidationRule
     {
         private long _limit;
 
