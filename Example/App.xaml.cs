@@ -13,18 +13,7 @@ namespace Example
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            //Is better use dipendency injection and register the validation service and the descriptions
-            //but for the example we will use Validator static class
-            Validator.ValidationService.AddValidationDescription(new BookValidationDescription());
-
-            //example in case of use of dipendency injection
-            //NB validation description must be registered inside AddValidation extension, not supported yet others ways
-            //unless you grab the validation service from the service provider and register the descriptions from there
-            IServiceCollection services = new ServiceCollection()
-                .AddValidation(validationService =>
-                {
-                    validationService.AddValidationDescription<BookValidationDescription>();
-                });
+            ValidationRegistrations.RegisterValidation();
 
             base.OnStartup(e);
         }
