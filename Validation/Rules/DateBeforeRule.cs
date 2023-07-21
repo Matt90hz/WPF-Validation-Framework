@@ -38,7 +38,7 @@ namespace Validation.Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender)
+        public override ValidationResult Validate(object? value, object sender)
         {
             return value is DateTime date && date < Before ? ValidationResult.ValidResult : new ValidationResult(false, "Date after the limit!");
         }
@@ -67,7 +67,7 @@ namespace Validation.Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender) =>
+        public override ValidationResult Validate(object? value, object sender) =>
             value is DateTime date && date <= Before.Invoke((T)sender) ?
             ValidationResult.ValidResult : new(false, "Date after the limit!");
     }

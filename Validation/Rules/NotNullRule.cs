@@ -9,9 +9,9 @@ namespace Validation.Rules
     public sealed class NotNullRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender)
+        public override ValidationResult Validate(object? value, object sender)
         {
-            return value is null ? new ValidationResult(false, "Null value!") : new ValidationResult(true, null);
+            return value is null ? new ValidationResult(false, "Null value!") : ValidationResult.ValidResult;
         }
     }
 

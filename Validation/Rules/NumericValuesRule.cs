@@ -9,8 +9,8 @@ namespace Validation.Rules
     public sealed class NumericValuesRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender) =>
-            double.TryParse(value.ToString(), out _) ?
+        public override ValidationResult Validate(object? value, object sender) =>
+            double.TryParse(value?.ToString(), out _) ?
             new ValidationResult(true, null) : new ValidationResult(false, "Only numbers accepted!");
     }
 }

@@ -9,10 +9,9 @@ namespace Validation.Rules
     public sealed class IntegerValuesRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender)
+        public override ValidationResult Validate(object? value, object sender)
         {
             return int.TryParse(value?.ToString(), out _) ? ValidationResult.ValidResult : new ValidationResult(false, "Only integer numbers accepted!");
         }
-
     }
 }

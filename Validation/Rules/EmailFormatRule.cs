@@ -11,11 +11,13 @@ namespace Validation.Rules
     public sealed class EmailFormatRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender)
+        public override ValidationResult Validate(object? value, object sender)
         {
+            if(value is null) return new ValidationResult(false, "Invalid email format!");
+            
             try
             {
-                var m = new MailAddress((string)value);
+                _ = new MailAddress((string)value);
                 return ValidationResult.ValidResult;
             }
             catch (FormatException ex)

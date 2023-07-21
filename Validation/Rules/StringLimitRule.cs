@@ -32,7 +32,7 @@ namespace Validation.Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender) =>
+        public override ValidationResult Validate(object? value, object sender) =>
             value is string text && text.Length > Limit ?
             new(false, $"Must be less than {Limit} characters!") : ValidationResult.ValidResult;
 

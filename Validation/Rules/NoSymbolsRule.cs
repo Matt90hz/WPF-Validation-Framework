@@ -10,7 +10,7 @@ namespace Validation.Rules
     public sealed class NoSymbolsRule : ExtendedValidationRule
     {
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender)
+        public override ValidationResult Validate(object? value, object sender)
         {
             if (((string?)value ?? string.Empty).Any(c => char.IsSymbol(c)))
             {

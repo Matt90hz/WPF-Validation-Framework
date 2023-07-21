@@ -26,8 +26,8 @@ namespace Validation.Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender) =>
-            value.Equals(Property.Invoke((T)sender)) ?
+        public override ValidationResult Validate(object? value, object sender) =>
+            value?.Equals(Property.Invoke((T)sender)) ?? false ?
             ValidationResult.ValidResult : new(false, "Values does not match!");
 
     }

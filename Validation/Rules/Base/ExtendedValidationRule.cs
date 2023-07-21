@@ -20,7 +20,7 @@ namespace Validation.Rules.Base
         /// <see cref="ValidationResult"/> with <see cref="ValidationResult.IsValid"/> set to <c>false</c> if validation fails.
         /// </para>
         /// </returns>
-        public abstract ValidationResult Validate(object value, object sender);
+        public abstract ValidationResult Validate(object? value, object sender);
 
         /// <inheritdoc/>
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)

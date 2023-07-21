@@ -36,7 +36,7 @@ namespace Validation.Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender)
+        public override ValidationResult Validate(object? value, object sender)
         {
             var mb = value as byte[];
 

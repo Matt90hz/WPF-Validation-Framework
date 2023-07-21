@@ -23,7 +23,7 @@ namespace Validation.Rules
         }
 
         /// <inheritdoc/>
-        public override ValidationResult Validate(object value, object sender) =>
+        public override ValidationResult Validate(object? value, object sender) =>
             value is string s && s.Length >= MinStingLenght ?
             ValidationResult.ValidResult : new(false, "Too short!");
 
